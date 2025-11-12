@@ -1,20 +1,17 @@
-//import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-
-
-function Contenedor({children}) {
-  // const [count, setCount] = useState(0)
-
+function Contenedor({ children }) {
   return (
-    <>
-      <div>
+    <main
+      id="main-content"
+      role="main"
+      tabIndex="-1"
+      className="min-h-screen bg-linear-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-8"
+    >
+      <section aria-labelledby="main-section-title" className="w-full max-w7xl text-center">
+        <h1 id="main-section-title">Intérpretes de películas destacadas</h1>
         {children}
-      </div>
-    </>
-  )
+      </section>
+    </main>
+  );
 }
 
-export default Contenedor
+export default Contenedor;
