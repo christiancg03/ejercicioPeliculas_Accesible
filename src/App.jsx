@@ -1,11 +1,14 @@
 import Contenedor from "./components/Contenedor";
+import { Routes, Route, Navigate } from 'react-router-dom';
 // import Interprete from "./Interprete";
 import Interprete from "./components/InterpretePeli10";
 import peliculas from "./data/peliculas";
 
 function App() {
   return (
-    
+    // <Routes>
+    //   <Route></Route>
+    // </Routes>
     <Contenedor>
       <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">
       {/* <h1 className="h1__sqlito [text-shadow:0px_4px_4px_#00000040]"> */}
