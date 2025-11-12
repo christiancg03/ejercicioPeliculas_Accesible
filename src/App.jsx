@@ -1,6 +1,6 @@
-import Contenedor from "./Contenedor";
+import Contenedor from "./components/Contenedor";
 // import Interprete from "./Interprete";
-import Interprete from "./InterpretePeli10";
+import Interprete from "./components/InterpretePeli10";
 import peliculas from "./data/peliculas";
 
 function App() {
