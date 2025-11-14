@@ -28,7 +28,7 @@ const peliculas = [
         imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Toni_Collette_%288968233309%29.jpg/330px-Toni_Collette_%288968233309%29.jpg"
       }
     ],
-    resumen: "El Dr. Malcolm Crowe, un psicÃ³logo infantil, trata de ayudar a un niño que afirma ver espíritus. Una inquietante historia sobre culpa y redención."
+    resumen: "El Dr. Malcolm Crowe, un psicólogo infantil, trata de ayudar a un niño que afirma ver espíritus. Una inquietante historia sobre culpa y redención."
   },
   {
     id: 2,
@@ -58,7 +58,7 @@ const peliculas = [
         imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SamuelLJackson.jpg/500px-SamuelLJackson.jpg"
       }
     ],
-    resumen: "Varios relatos entrelazados de criminales en Los Ãngeles, con diálogos ingeniosos, violencia estilizada y humor negro característico de Tarantino."
+    resumen: "Varios relatos entrelazados de criminales en Los Ángeles, con diálogos ingeniosos, violencia estilizada y humor negro característico de Tarantino."
   },
   {
     id: 3,
@@ -135,7 +135,7 @@ const peliculas = [
   {
     id: 6,
     nombre: "Concursante",
-    director: "Rodrigo CortÃ©s",
+    director: "Rodrigo Cortés",
     clasificacion: "Drama",
     recaudacion: "$1.2 millones",
     cartelera: "https://www.ecartelera.com/carteles/1300/1364/001.jpg",
