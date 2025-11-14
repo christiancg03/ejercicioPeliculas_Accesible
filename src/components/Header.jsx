@@ -6,7 +6,7 @@ function Header() {
             <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                 
                 {/* Logo o título */}
-                <h1 className="text-xl font-heading-h2 text-(--colorprimary)">
+                <h1 className="text-xl font-heading-h3 text-(--colorprimary)">
                     Página de Cine
                 </h1>
 
