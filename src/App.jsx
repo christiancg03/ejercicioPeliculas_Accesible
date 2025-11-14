@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Peliculas from "./pages/Peliculas";
 // import Login from "./pages/Login";
 import Interpretes from "./pages/Interpretes";
-// import ErrorPage from "./pages/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         </Route>
 
 
-        {/* <Route path="*" element={<ErrorPage />}></Route> */}
+         <Route path="*" element={<ErrorPage />}></Route>
 
       </Routes>
 
