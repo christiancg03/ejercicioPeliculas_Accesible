@@ -1,45 +1,34 @@
 import Contenedor from "./components/Contenedor";
 import { Routes, Route, Navigate } from 'react-router-dom';
-// import Interprete from "./Interprete";
-import Interprete from "./components/InterpretePeli10";
-import peliculas from "./data/peliculas";
+import Home from "./pages/Home";
+// import Admin from "./pages/Admin";
+import Peliculas from "./pages/Peliculas";
+// import Login from "./pages/Login";
+import Interpretes from "./pages/Interpretes";
+// import ErrorPage from "./pages/ErrorPage";
+import Header from "./components/Header";
 
 function App() {
   return (
-    // <Routes>
-    //   <Route></Route>
-    // </Routes>
-    <Contenedor>
-      <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">
-      {/* <h1 className="h1__sqlito [text-shadow:0px_4px_4px_#00000040]"> */}
-      {/* <h1 className="contenedor__h1 [text-shadow:0px_4px_4px_#00000040]"> */}
-        Intérpretes
-      </h1>
-      {/* <p className="text-(--body-text-font-color) leading-(--body-text-line-height)"> */}
-      <p className="body-text">
-        Listado de intérpretes disponibles:
-      </p>
-    
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
-        
-          {peliculas
-          // .filter(pelicula => pelicula.clasificacion === "Drama") // solo películas de Drama
-          .map(pelicula =>
-            pelicula.actores.map((actor, index) => (
-              <Interprete
-                key={index}
-                nombre={actor.nombre}
-                foto={actor.imagen}
-                esNota10={pelicula.nota === 10} // pasamos si la nota es 10
-              >
-                {actor.biografia}
-              </Interprete>
-            ))
-          )}
+    <>
+      <Header />
+      <Routes>
+        <Route element={<Contenedor></Contenedor>}>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/inicio" element={<Navigate to="/"></Navigate>}></Route>
+          {/* <Route path="/admin" element={<Admin></Admin>}></Route> */}
+          <Route path="/peliculas" element={<Peliculas></Peliculas>}></Route>
+          <Route path="/interpretes" element={<Interpretes></Interpretes>}></Route>
+          {/* <Route path="/login" element={<Login></Login>}></Route> */}
+        </Route>
 
-        </div>
-    </Contenedor>
-  )
+
+        {/* <Route path="*" element={<ErrorPage />}></Route> */}
+
+      </Routes>
+
+    </>
+  );
 }
 
-export default App
+export default App;
