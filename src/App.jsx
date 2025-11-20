@@ -7,6 +7,7 @@ import Peliculas from "./pages/Peliculas";
 import Interpretes from "./pages/Interpretes";
 import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
+import InterpreteDetalle from "./pages/InterpreteDetalle";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           {/* <Route path="/admin" element={<Admin></Admin>}></Route> */}
           <Route path="/peliculas" element={<Peliculas></Peliculas>}></Route>
           <Route path="/interpretes" element={<Interpretes></Interpretes>}></Route>
+          <Route path="/interprete/:nombre" element={<InterpreteDetalle />} />
           {/* <Route path="/login" element={<Login></Login>}></Route> */}
         </Route>
 

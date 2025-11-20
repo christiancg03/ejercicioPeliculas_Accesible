@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Interprete({ foto, nombre, esNota10, children }) {
     return (
+        <Link
+            to={`/interprete/${encodeURIComponent(nombre)}`}
+            className="block"
+        >
         <article 
             tabIndex="0"
             aria-label={`Intérprete ${nombre}${esNota10 ? ', destacado' : ''}`}
@@ -24,6 +30,7 @@ function Interprete({ foto, nombre, esNota10, children }) {
 
             <p className="mt-2 text-sm text-gray-600">{children}</p>
         </article>
+        </Link>
     );
 }
 
