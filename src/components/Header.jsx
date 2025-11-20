@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="w-full bg-white shadow-md">
+      
+      {/* Zona superior: logo + hamburguesa */}
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
@@ -13,66 +15,98 @@ function Header() {
           Página de Cine
         </h1>
 
-        {/* Botón hamburguesa */}
-        <button
-          className="sm:hidden flex items-center px-3 py-2 text-gray-700 border rounded border-gray-700"
-          onClick={() => setIsOpen(!isOpen)}
+        {/* Botón hamburguesa (solo móvil) */}
+        <button 
+          className="sm:hidden text-3xl text-gray-700"
+          onClick={() => setOpen(!open)}
         >
-          {isOpen ? (
-            // Icono X
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            // Icono hamburguesa
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
+          {open ? "✕" : "☰"}
         </button>
 
-        {/* Menú ordenador */}
-        <ul className="hidden sm:flex items-center gap-6">
-          <li><Link to="/" className="text-gray-700 hover:text-(--colorprimary) font-medium">Inicio</Link></li>
-          <li><Link to="/login" className="text-gray-700 hover:text-(--colorprimary) font-medium">Login</Link></li>
-          <li><Link to="/peliculas" className="text-gray-700 hover:text-(--colorprimary) font-medium">Películas</Link></li>
-          <li><Link to="/interpretes" className="text-gray-700 hover:text-(--colorprimary) font-medium">Intérpretes</Link></li>
-          <li><Link to="/admin" className="text-gray-700 hover:text-(--colorprimary) font-medium">Administración</Link></li>
-        </ul>
+        {/* Menú normal en escritorio */}
+        <nav className="hidden sm:flex gap-6">
+          <NavLink 
+            to="/"
+            className="text-gray-700 hover:text-(--colorprimary) font-medium"
+          >
+            Inicio
+          </NavLink>
+
+          <NavLink 
+            to="/login"
+            className="text-gray-700 hover:text-(--colorprimary) font-medium"
+          >
+            Login
+          </NavLink>
+
+          <NavLink 
+            to="/peliculas"
+            className="text-gray-700 hover:text-(--colorprimary) font-medium"
+          >
+            Películas
+          </NavLink>
+
+          <NavLink 
+            to="/interpretes"
+            className="text-gray-700 hover:text-(--colorprimary) font-medium"
+          >
+            Intérpretes
+          </NavLink>
+
+          <NavLink 
+            to="/admin"
+            className="text-gray-700 hover:text-(--colorprimary) font-medium"
+          >
+            Administración
+          </NavLink>
+        </nav>
       </div>
 
-      {/* Menú móvil */}
-      <div className={`sm:hidden ${isOpen ? "block" : "hidden"} px-6 pb-4`}>
-        <ul className="flex flex-col gap-4">
-          <li><Link to="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-(--colorprimary) font-medium">Inicio</Link></li>
-          <li><Link to="/login" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-(--colorprimary) font-medium">Login</Link></li>
-          <li><Link to="/peliculas" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-(--colorprimary) font-medium">Películas</Link></li>
-          <li><Link to="/interpretes" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-(--colorprimary) font-medium">Intérpretes</Link></li>
-          <li><Link to="/admin" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-(--colorprimary) font-medium">Administración</Link></li>
-        </ul>
-      </div>
+      {/* Menú móvil controlado por el estado */}
+      <nav className={`sm:hidden px-6 pb-4 flex flex-col gap-4 transition-all ${
+        open ? "block" : "hidden"
+      }`}>
+        <NavLink 
+          to="/"
+          onClick={() => setOpen(false)}
+          className="text-gray-700 hover:text-(--colorprimary) font-medium"
+        >
+          Inicio
+        </NavLink>
+
+        <NavLink 
+          to="/login"
+          onClick={() => setOpen(false)}
+          className="text-gray-700 hover:text-(--colorprimary) font-medium"
+        >
+          Login
+        </NavLink>
+
+        <NavLink 
+          to="/peliculas"
+          onClick={() => setOpen(false)}
+          className="text-gray-700 hover:text-(--colorprimary) font-medium"
+        >
+          Películas
+        </NavLink>
+
+        <NavLink 
+          to="/interpretes"
+          onClick={() => setOpen(false)}
+          className="text-gray-700 hover:text-(--colorprimary) font-medium"
+        >
+          Intérpretes
+        </NavLink>
+
+        <NavLink 
+          to="/admin"
+          onClick={() => setOpen(false)}
+          className="text-gray-700 hover:text-(--colorprimary) font-medium"
+        >
+          Administración
+        </NavLink>
+      </nav>
+
     </header>
   );
 }
