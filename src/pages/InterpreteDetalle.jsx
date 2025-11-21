@@ -38,9 +38,9 @@ function InterpreteDetalle() {
 
             <h2 className="text-2xl font-bold mt-10 mb-4">Películas donde participa</h2>
 
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-1 gap-4 justify-center text-center">
                 {pelisDelActor.map(p => (
-                    <li key={p.id} className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center">
+                    <li key={p.id} className="p-4 rounded-lg flex flex-col items-center">
                         <figure className="w-48 h-64 overflow-hidden rounded-md">
                             <img src={p.cartelera} alt={`Cartel de ${p.nombre}`} className="w-full h-full object-cover"/>
                         </figure>
