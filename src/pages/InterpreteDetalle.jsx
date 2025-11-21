@@ -36,7 +36,7 @@ function InterpreteDetalle() {
                 <strong>Fecha de nacimiento:</strong> {actor.fechaNacimiento}
             </p>
 
-            <h2 className="text-2xl font-bold mt-10 mb-4">Películas donde participa</h2>
+            <h2 className="text-2xl font-bold mt-10 mb-4 text-center">Películas donde participa</h2>
 
             <ul className="grid grid-cols-1 sm:grid-cols-1 gap-4 justify-center text-center">
                 {pelisDelActor.map(p => (

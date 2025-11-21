@@ -32,7 +32,7 @@ function PeliculaDetalle() {
                 {pelicula.actores.map((actor, index) => (
                     <li key={index} className="p-4 rounded-lg flex flex-col items-center">
                         <strong>{actor.nombre}</strong>
-                        <img src={actor.imagen} alt="" className="w-48 h-64 object-cover" />
+                        <img src={actor.imagen} alt="" className="w-48 h-64 object-cover rounded-md" />
                     </li>
                 ))}
             </ul>
