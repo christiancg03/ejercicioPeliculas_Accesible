@@ -20,7 +20,7 @@ function App() {
           {/* <Route path="/admin" element={<Admin></Admin>}></Route> */}
           <Route path="/peliculas" element={<Peliculas></Peliculas>}></Route>
           <Route path="/interpretes" element={<Interpretes></Interpretes>}></Route>
-          <Route path="/interprete/:nombre" element={<InterpreteDetalle />} />
+          <Route path="/interprete/:index" element={<InterpreteDetalle />} />
           {/* <Route path="/login" element={<Login></Login>}></Route> */}
         </Route>
 

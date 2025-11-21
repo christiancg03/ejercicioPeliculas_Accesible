@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import peliculas from "../data/peliculas";
 
-function Interprete({ foto, nombre, esNota10, children }) {
+function Interprete({ foto, nombre, esNota10, children, index }) {
     return (
         <Link
-            to={`/interprete/${encodeURIComponent(nombre)}`}
+            to={`/interprete/${index}`}
             className="block"
         >
         <article 
