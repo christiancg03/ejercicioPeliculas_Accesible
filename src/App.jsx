@@ -8,6 +8,7 @@ import Interpretes from "./pages/Interpretes";
 import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
 import InterpreteDetalle from "./pages/InterpreteDetalle";
+import PeliculaDetalle from "./pages/PeliculaDetalle";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/peliculas" element={<Peliculas></Peliculas>}></Route>
           <Route path="/interpretes" element={<Interpretes></Interpretes>}></Route>
           <Route path="/interprete/:index" element={<InterpreteDetalle />} />
+          <Route path="/pelicula/:id" element={<PeliculaDetalle />} />
           {/* <Route path="/login" element={<Login></Login>}></Route> */}
         </Route>
 
