@@ -3,39 +3,44 @@ import peliculas from "../data/peliculas";
 
 function InterpreteDetalle() {
     const { index } = useParams();
-    const indexNum = parseInt(index, 10); // convertir a número
+    const indexNum = parseInt(index); // Convierto el index a número
 
-    // Crear lista global de actores con índice
-    const actoresGlobal = peliculas.flatMap(peli =>
-        peli.actores.map(actor => ({ ...actor, peliculas: peliculas.filter(p => p.actores.includes(actor)) }))
-    );
+    // Lista global de actores
+    const actores = peliculas.flatMap(p => p.actores);
 
-    const actorEncontrado = actoresGlobal[indexNum];
+    // El Actor seleccionado
+    const actor = actores[indexNum];
 
-    if (!actorEncontrado) {
+    if (!actor) {
         return <h1 className="text-center mt-10 text-red-600">Actor no encontrado</h1>;
     }
 
+    // Películas donde sale el actor
+    const pelisDelActor = peliculas.filter(p =>
+        p.actores.find(a => a.nombre === actor.nombre)
+    );
+
     return (
         <div className="max-w-3xl mx-auto mt-10 p-4">
-            <h1 className="text-3xl font-bold text-center mb-6">{actorEncontrado.nombre}</h1>
+            
+            <h1 className="text-3xl font-bold text-center mb-6">{actor.nombre}</h1>
 
             <img
-                src={actorEncontrado.imagen}
-                alt={actorEncontrado.nombre}
+                src={actor.imagen}
+                alt={actor.nombre}
                 className="w-80 h-80 mx-auto rounded-lg shadow-lg object-cover"
             />
 
-            <p className="mt-6 text-gray-700 text-lg">{actorEncontrado.biografia}</p>
+            <p className="mt-6 text-gray-700 text-lg">{actor.biografia}</p>
 
             <p className="mt-4 text-gray-500">
-                <strong>Fecha de nacimiento:</strong> {actorEncontrado.fechaNacimiento}
+                <strong>Fecha de nacimiento:</strong> {actor.fechaNacimiento}
             </p>
 
             <h2 className="text-2xl font-bold mt-10 mb-4">Películas donde participa</h2>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {actorEncontrado.peliculas.map(p => (
+                {pelisDelActor.map(p => (
                     <li key={p.id} className="bg-gray-100 p-4 rounded-lg shadow flex flex-col items-center">
                         <figure className="w-48 h-64 overflow-hidden rounded-md">
                             <img src={p.cartelera} alt={`Cartel de ${p.nombre}`} className="w-full h-full object-cover"/>
