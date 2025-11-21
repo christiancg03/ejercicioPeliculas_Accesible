@@ -3,13 +3,12 @@ import peliculas from "../data/peliculas";
 
 function InterpreteDetalle() {
     const { index } = useParams();
-    const indexNum = parseInt(index); // Convierto el index a número
-
+    
     // Lista global de actores
     const actores = peliculas.flatMap(p => p.actores);
 
-    // El Actor seleccionado
-    const actor = actores[indexNum];
+    // El Actor seleccionado que pillamos de la lista
+    const actor = actores[index];
 
     if (!actor) {
         return <h1 className="text-center mt-10 text-red-600">Actor no encontrado</h1>;
