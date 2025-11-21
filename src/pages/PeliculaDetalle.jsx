@@ -11,6 +11,7 @@ function PeliculaDetalle() {
 
     return (
         <div className="max-w-3xl mx-auto mt-10 p-4">
+            <a class="btn" href="/peliculas">Volver</a>
             <h1 className="text-3xl font-bold text-center mb-6">{pelicula.nombre}</h1>
 
             <img
