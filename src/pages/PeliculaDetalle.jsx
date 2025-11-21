@@ -26,12 +26,12 @@ function PeliculaDetalle() {
             <p><strong>Clasificación:</strong> {pelicula.clasificacion}</p>
             <p><strong>Nota:</strong> {pelicula.nota}</p>
 
-            <h2 className="text-2xl font-bold mt-10 mb-4">Intérpretes</h2>
+            <h2 className="text-2xl font-bold mt-10 mb-4 text-center">Intérpretes</h2>
 
             <ul className="space-y-2">
                 {pelicula.actores.map((actor, index) => (
                     <li key={index} className="p-4 rounded-lg flex flex-col items-center">
-                        {actor.nombre}
+                        <strong>{actor.nombre}</strong>
                         <img src={actor.imagen} alt="" className="w-48 h-64 object-cover" />
                     </li>
                 ))}
